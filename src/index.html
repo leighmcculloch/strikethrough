@@ -5,34 +5,7 @@
     <title>Strikethrough</title>
     <link rel="stylesheet" type="text/css" href="reset.css">
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
-    <script type="text/javascript">
-      (function(window, document){
-        var $input, $output;
-
-        function initialize() {
-          $input = document.getElementById('input');
-          $output = document.getElementById('output');
-
-          $input.addEventListener('input', updateOutput);
-          updateOutput();
-        }
-
-        function updateOutput() {
-          var chars = $input.innerText.split('');
-          var output = '';
-          for (var i=0; i<chars.length; i++) {
-            var c = chars[i];
-            output += c;
-            if (c != '\n') {
-              output += '\u0336';
-            }
-          }
-          $output.innerText = output;
-        }
-
-        window.addEventListener("load", initialize);
-      })(window, document);
-    </script>
+    <script src="update_output.js" type="text/javascript" async></script>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
