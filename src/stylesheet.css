@@ -8,7 +8,7 @@ h1 {
   font-variant: normal;
   font-weight: bold;
   font-size: 24px;
-  margin: 10px 0;
+  margin: 20px 0 10px 0;
   text-decoration: line-through;
 }
 
@@ -18,10 +18,9 @@ h1 {
   margin: 10px;
   display: inline-block;
   vertical-align: top;
-
-  text-align: left;
   padding: 10px 14px;
 
+  text-align: left;
   font-family: inherit;
   font-size: 18px;
 }
