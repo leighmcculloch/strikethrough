@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Strikethrough</title>
+    <link rel="stylesheet" type="text/css" href="reset.css">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <script type="text/javascript">
+      (function(window, document){
+        var $input, $output;
+
+        function initialize() {
+          $input = document.getElementById('input');
+          $output = document.getElementById('output');
+
+          $input.addEventListener('input', updateOutput);
+          updateOutput();
+        }
+
+        function updateOutput() {
+          var chars = $input.innerText.split('');
+          var output = '';
+          for (var i=0; i<chars.length; i++) {
+            var c = chars[i];
+            output += c;
+            if (c != '\n') {
+              output += '\u0336';
+            }
+          }
+          $output.innerText = output;
+        }
+
+        window.addEventListener("load", initialize);
+      })(window, document);
+    </script>
+  </head>
+  <body>
+    <h1>Strikethrough</h1>
+    <span class="textarea" id="input" contenteditable="true">Type words here</span>
+    <span class="textarea" id="output"></span>
+  </body>
+</html>
