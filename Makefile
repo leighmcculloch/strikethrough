@@ -1,6 +1,13 @@
 export CLOUDFLARE_ZONE = 3ff9169c8ee80066583c2839a1ac51f1
 
-deploy: push cdn
+deploy: clean build push cdn
+
+clean:
+	rm -fR build
+
+build:
+	mkdir -p build
+	cp -r src/* build/
 
 push:
 	git branch -D gh-pages 2>/dev/null | true
